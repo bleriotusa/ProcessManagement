@@ -18,14 +18,33 @@ class PCB:
     def remove_child(self, child):
         self.children.remove(child)
 
-    def add_resource(self, resource):
-        self.resources.append(resource)
+    def add_resource(self, resource, units):
+        self.resources.append([resource, units]) # resources is a list of lists, where l[0] = resource block, l[1] = units
 
-    def delete(self):
-        del self
+    def remove_resources(self, resource, units):
+        units_left = None
+        for l in self.resources:
+            if l[0] == resource:
+                l[1] -= units
+                units_left = l[1]
+
+        if units_left is None:
+            print(resource.rid)
+            print('error')
+            return False
+
+        elif units_left < 0:
+            print('error')
+            return False
+
+        elif units_left == 0:
+            self.resources.remove([resource, units_left])
+
+        return True
 
     def children_list(self):
         return [child.pid for child in self.children]
+
 
 class RL:
     """
@@ -55,20 +74,20 @@ class RL:
         return pcb[0] if pcb else None
 
     def delete(self, pid):
-         pcb = None
-         for pcb_tup in self.ready_list.queue:
-             if pcb_tup[2].pid == pid:
-                 pcb = pcb_tup
+        pcb = None
+        for pcb_tup in self.ready_list.queue:
+            if pcb_tup[2].pid == pid:
+                pcb = pcb_tup
 
-         if not pcb:
-             print('error')
+        if not pcb:
+            print('error')
 
-         self.ready_list.queue.remove(pcb)
+        self.ready_list.queue.remove(pcb)
 
     def show(self):
         print('RL: ', end='')
         for tup in self.ready_list.queue:
-            print('({}, {}, {} -> {})->'.format(tup[0],tup[1],tup[2].pid, tup[2].children_list()), end=' ')
+            print('({}, {}, {} ch: {}, r: {})->'.format(tup[0], tup[1], tup[2].pid, tup[2].children_list(), tup[2].resources), end=' ')
         print()
 
 
@@ -76,14 +95,17 @@ class RCB:
     def __init__(self, rid: int, units: int, waiting_list=Queue()):
         self.rid = rid
         self.units = units
-        self.waiting_list = waiting_list
+        self.waiting_list = waiting_list # list of tuples where t[0] = pcb, t[1] = units requested for pcb
         self.remaining_units = units
 
-    def pop_wl(self) -> PCB:
-        return self.waiting_list.get()
+    def peek_wl_units(self):
+        return self.waiting_list.queue[0][1]
 
-    def add_wl(self, pcb: PCB):
-        self.waiting_list.put(pcb)
+    def pop_wl(self) -> PCB:
+        return self.waiting_list.get()[0]
+
+    def add_wl(self, pcb: PCB, units):
+        self.waiting_list.put((pcb, units))
 
 
 class PRManager:
@@ -137,19 +159,39 @@ class PRManager:
             if p in r.waiting_list.queue:
                 r.waiting_list.queue.remove(p)
 
-        # p.delete()
 
     def request(self, rid, units):
-        r = PRManager.get_RCB()
+        r = self.get_RCB(rid)
         if r.remaining_units >= units:
             r.remaining_units = r.remaining_units - units
-            self.running.add_resource(r)
+            self.running.add_resource(r, units)
         else:
             self.running.status['type'] = False
             self.running.status['list'].append(r)
             self.ready_list.pop()
-            r.add_wl(self.running)
-        self.scheduler()
+            r.add_wl(self.running, units)
+        return self.scheduler()
+
+    def release(self, rid, units):
+        r = self.get_RCB(rid)
+
+        success = self.running.remove_resources(r, units)
+
+        if success:
+            r.remaining_units += units
+
+            while units > 0 and r.waiting_list.queue:
+
+                units_requested = r.peek_wl_units()
+                if units_requested <= r.remaining_units:
+                    p = r.pop_wl()
+                    r.remaining_units = r.remaining_units - units
+                    p.add_resource(r, units)
+                    p.status['type'] = True
+                    # p.status['list'] = self.ready_list
+                    self.ready_list.insert(p)
+
+        return self.scheduler()
 
     def get_RCB(self, rid):
         r = [r for r in self.resources if r.rid == rid]
@@ -158,7 +200,7 @@ class PRManager:
     def scheduler(self):
         p = self.ready_list.peek()
         if (not self.running or
-                self.running.priority < p.priority or
+                    self.running.priority < p.priority or
                 not self.running.status['type']):
             # preempt p
             p.status['type'] = True
@@ -171,7 +213,8 @@ class PRManager:
 
 
 if __name__ == '__main__':
-    pass
+    filename = ''
+    f = open()
 
 
 
