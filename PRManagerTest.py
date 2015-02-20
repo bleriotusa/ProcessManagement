@@ -57,9 +57,14 @@ class PRManagerTest(unittest.TestCase):
         m = PRManager()
         self.assertEquals('x', m.create('x', 1))
         self.assertEquals('x', m.request('R1', 1))
-        self.assertEquals('init', m.request('R1', 1))
         self.assertEquals('z', m.create('z', 2))
-        self.assertEquals('init', m.request('R2', 3))
+        self.assertEquals('x', m.request('R1', 1))
+        self.assertEquals('y', m.create('y', 2))
+        self.assertEquals('y', m.request('R2', 2))
+        self.assertEquals('x', m.request('R1', 1))
+        self.assertEquals('init', m.request('R2', 1))
+
+
 
     def test_release(self):
         print('\n\n **** Testing test_release ****')
@@ -69,9 +74,19 @@ class PRManagerTest(unittest.TestCase):
         self.assertEquals('x', m.release('R1', 1))
         self.assertEquals('x', m.request('R1', 1))
         self.assertEquals('z', m.create('z', 2))
+        m.ready_list.show()
+
         self.assertEquals('x', m.request('R1', 1))
-        # m.ready_list.show()
         self.assertEquals('z', m.release('R1', 1))
+
+    def test_time_out(self):
+        print('\n\n **** Testing test_time_out ****')
+        m = PRManager()
+        self.assertEquals('x', m.create('x', 2))
+        self.assertEquals('x', m.create('y', 1))
+        self.assertEquals('x', m.time_out())
+        self.assertEquals('x', m.create('z', 2))
+        self.assertEquals('z', m.time_out())
 
 
 
