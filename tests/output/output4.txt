@@ -1,0 +1,24 @@
+init a init b b a c b b init
+
+init a b b b c a
+
+init a a a a a a a a a
+
+init a a a a a b a c a d a b a c a a d a init
+
+init a a b a c a d a e a b c d b b c d e a init
+
+init a a a b c c a b d d d c a b d c a b
+
+init a b b b c c b a init
+
+init a error(duplicate process name: a)
+
+init a a error(non-existent resource: 5)
+
+init a error(request too many units: 5/R4)
+
+init a a error(not holding resource: 2)
+
+init a a error(release too many units: 3/R3:2)
+

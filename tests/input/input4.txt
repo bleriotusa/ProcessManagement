@@ -1,0 +1,138 @@
+# basic process operations
+cr a 1
+de a
+cr b 1
+cr c 1
+cr a 2
+de a
+to
+de c
+de b
+
+# delete parent process
+init
+cr a 1
+cr b 2
+cr c 2
+cr d 2
+to
+de b
+
+# basic resource allocations
+init
+cr a 1
+req R1 1
+req R2 1
+req R2 1
+req R3 3
+rel R1 1
+rel R2 2
+rel R3 2
+rel R3 1
+
+# schedule after release resource - one process is waiting
+init
+cr a 1
+req R1 1
+req R2 1
+req R2 1
+req R3 3
+cr b 2
+req R1 1
+cr c 2
+req R2 2
+cr d 2
+req R3 3
+rel R1 1
+de b
+rel R2 2
+de c
+rel R3 2
+rel R3 1
+de d
+de a
+
+# schedule after release resource - multiple processes is waiting
+init
+cr a 1
+req R4 4
+cr b 2
+req R4 1
+cr c 2
+req R4 1
+cr d 2
+req R4 1
+cr e 2
+req R4 2
+rel R4 4
+to
+to
+to
+rel R4 1
+de b
+de c
+de d
+de e
+de a
+
+# destroy process to relase all resource
+init
+cr a 1
+cr b 1
+cr c 1
+to
+to
+cr d 1
+to
+to
+to
+req R2 2
+req R3 3
+to
+req R2 1
+req R2 1
+req R3 1
+de d
+to
+to
+
+# deadlcok
+init 
+cr a 1
+cr b 2
+cr c 2
+req R2 2
+to
+req R3 3
+req R2 2
+req R3 3
+de a
+
+# duplicate process name
+init
+cr a 1
+cr a 2
+
+# non-existent resource
+init 
+cr a 1
+req R1 1
+req R5 1
+
+# request too many resource
+init
+cr a 1
+req R4 5
+
+# release wrong resource
+init
+cr a 1
+req R1 1
+rel R2 1
+
+# release too many resource
+init
+cr a 1
+req R3 2
+rel R3 3
+

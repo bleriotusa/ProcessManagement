@@ -35,6 +35,7 @@ class PRManagerTest(unittest.TestCase):
     def test_tree_kill(self):
         print('\n\n **** Testing test_tree_kill ****')
         m = PRManager()
+        m.init()
         self.assertEquals('x', m.create('x', 1))
         self.assertEquals('x', m.create('y', 1))
         self.assertEquals('z', m.create('z', 2))
@@ -55,6 +56,7 @@ class PRManagerTest(unittest.TestCase):
     def test_request(self):
         print('\n\n **** Testing test_request ****')
         m = PRManager()
+        m.init()
         self.assertEquals('x', m.create('x', 1))
         self.assertEquals('x', m.request('R1', 1))
         self.assertEquals('z', m.create('z', 2))
@@ -69,6 +71,7 @@ class PRManagerTest(unittest.TestCase):
     def test_release(self):
         print('\n\n **** Testing test_release ****')
         m = PRManager()
+        m.init()
         self.assertEquals('x', m.create('x', 1))
         self.assertEquals('x', m.request('R1', 1))
         self.assertEquals('x', m.release('R1', 1))
@@ -82,6 +85,7 @@ class PRManagerTest(unittest.TestCase):
     def test_time_out(self):
         print('\n\n **** Testing test_time_out ****')
         m = PRManager()
+        m.init()
         self.assertEquals('x', m.create('x', 2))
         self.assertEquals('x', m.create('y', 1))
         self.assertEquals('x', m.time_out())

@@ -27,16 +27,14 @@ class PCB:
         units_left = None
         for l in self.resources:
             if l[0] == resource:
+                if l[1] - units < 0:
+                    return 'error(release too many units: {}/{}:{})'.format(units, resource.rid, resource.units)
                 l[1] -= units
                 units_left = l[1]
 
         if units_left is None:
-            print('error', resource.rid)
-            return False
-
-        elif units_left < 0:
-            print('error')
-            return False
+            # print('error', resource.rid)
+            return 'error(not holding resource: {})'.format(resource.rid[1])
 
         elif units_left == 0:
             self.resources.remove([resource, units_left])
@@ -144,8 +142,7 @@ class RCB:
 
 class PRManager:
     def __init__(self):
-        self.init()
-        self.scheduler()
+        pass
 
     def init(self):
         self.ready_list = RL()
@@ -154,6 +151,8 @@ class PRManager:
         for i in range(1, 5):
             self.resources.append(RCB('R{}'.format(i), i))
         self.running = self.ready_list.peek()
+        self.processes = set()
+        return self.scheduler()
 
     def create(self, pid: str, priority: int):
         """
@@ -163,12 +162,20 @@ class PRManager:
         :param priority: priority of process
         :return: currently running process ID
         """
+        if pid in self.processes:
+            return 'error(duplicate process name: {})'.format(pid)
+
         new_pcb = PCB(pid, priority, parent=self.running)
         self.running.add_child(new_pcb)
         self.ready_list.insert(new_pcb)
+        self.processes.add(pid)
         return self.scheduler()
 
     def destroy(self, pid):
+        if pid not in self.processes:
+            return 'error(non-existent process: {})'.format(pid)
+        self.processes.remove(pid)
+
         p = self.get_PCB(pid)
         self.kill_tree(p)
         self.running = None
@@ -186,6 +193,8 @@ class PRManager:
     def kill_tree(self, p):
         children = [child for child in p.children]
         for q in children:
+            if q.pid in self.processes:
+                self.processes.remove(q.pid)
             self.kill_tree(q)
 
         # delete pointer from parent
@@ -206,10 +215,12 @@ class PRManager:
 
 
     def request(self, rid, units_req):
+        if rid not in ['R1', 'R2', 'R3', 'R4']:
+            return 'error(non-existent resource: {})'.format(rid[1])
+
         r = self.get_RCB(rid)
         if units_req > r.units:
-            print('error(request too many units: {}/{}'.format(units_req, rid))
-            return
+            return 'error(request too many units: {}/{})'.format(units_req, rid)
 
         if r.remaining_units >= units_req:
             r.remaining_units = r.remaining_units - units_req
@@ -226,32 +237,36 @@ class PRManager:
     def release_p(self, pcb, rid, units):
         r = self.get_RCB(rid)
 
-        success = pcb.remove_resources(r, units)
+        message = pcb.remove_resources(r, units)
 
-        if success:
-            r.remaining_units += units
+        if message is not True:
+            return message
 
-            while r.remaining_units > 0 and r.waiting_list.queue:
+        r.remaining_units += units
 
-                units_requested = r.peek_wl_units()
-                if units_requested <= r.remaining_units:
-                    p_tup = r.pop_wl()
-                    p = p_tup[0]
-                    p_units_req = p_tup[1]
-                    r.remaining_units = r.remaining_units - p_units_req
-                    p.add_resource(r, units)
-                    p.status['type'] = True
-                    p.status['list'] = self.ready_list
-                    self.ready_list.insert(p)
-                else:
-                    break
-        else:
-            print('could not remove resources from {}'.format(self.running.pid))
+        while r.remaining_units > 0 and r.waiting_list.queue:
+
+            units_requested = r.peek_wl_units()
+            if units_requested <= r.remaining_units:
+                p_tup = r.pop_wl()
+                p = p_tup[0]
+                p_units_req = p_tup[1]
+                r.remaining_units = r.remaining_units - p_units_req
+                p.add_resource(r, units)
+                p.status['type'] = True
+                p.status['list'] = self.ready_list
+                self.ready_list.insert(p)
+            else:
+                break
+        return None
 
 
     def release(self, rid, units):
-        self.release_p(self.running, rid, units)
-        return self.scheduler()
+        failure = self.release_p(self.running, rid, units)
+        if not failure:
+            return self.scheduler()
+        else:
+            return failure
 
     def get_RCB(self, rid):
         r = [r for r in self.resources if r.rid == rid]
@@ -275,16 +290,18 @@ class PRManager:
             # preempt p
             p.status['type'] = True
             self.running = p
-            print(p.pid, end=' ')
+            # print(p.pid, end=' ')
             return p.pid
         else:
             self.running = p
-            print(self.running.pid, end=' ')
+            # print(self.running.pid, end=' ')
             return self.running.pid
 
 
-def main():
-    filename = 'tests/input/input1.txt'
+def main(read_file=None, out_file=None):
+    read_file = read_file
+    out_file = out_file
+
     ops = dict()
     m = PRManager()
     ops['cr'] = m.create
@@ -292,24 +309,55 @@ def main():
     ops['req'] = m.request
     ops['rel'] = m.release
     ops['to'] = m.time_out
-    with open(filename) as f:
+    ops['init'] = m.init
+
+    g = open(out_file, 'w+')
+    a = open(read_file)
+    comment = a.readline().startswith('#')
+
+    with open(read_file) as f:
+        g.write('{} '.format(ops['init']()))
         for line in f:
-            if line == '\n':
-                print()
+            if (line == '\n' or line.startswith('#')) and not comment:
+                g.write('\n')
+            comment = False
             tokens = line.strip().split(' ')
             op = tokens[0]
-            if op == 'to':
-                ops[op]()
+            if op in ['to', 'init']:
+                g.write(ops[op]() + ' ')
             elif op in ['de']:
-                ops[op](tokens[1])
+                out = ops[op](tokens[1])
+                # print(out)
+                g.write(out + ' ')
+                # g.write(ops[op](tokens[1]) + ' ')
             elif op in ['cr', 'req', 'rel']:
-                ops[op](tokens[1], int(tokens[2]))
+                g.write(ops[op](tokens[1], int(tokens[2])) + ' ')
 
+    g.close()
     # m.ready_list.show()
 
 
 if __name__ == '__main__':
-    main()
+
+    # for i in range(1, 4):
+    i = 4
+    read_file = 'tests/input/input{}.txt'.format(i)
+    out_file = 'tests/my_out/out{}.txt'.format(i)
+    main(read_file, out_file)
+
+    for i in range(1, 4):
+        out_file = 'tests/my_out/out{}.txt'.format(i)
+        verify_file = 'tests/output/output{}.txt'.format(i)
+        out = enumerate(open(out_file))
+        ver = enumerate(open(verify_file))
+        out_iter = iter(out)
+        ver_iter = iter(ver)
+        for line in range(0, len(list(enumerate(open(verify_file))))):
+            out_line = next(out_iter)
+            ver_line = next(ver_iter)
+            if out_line[1].strip() != ver_line[1].strip():
+                print(out_file, out_line, ver_line)
+
 
 
 
