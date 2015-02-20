@@ -24,19 +24,32 @@ class PCB:
             [resource, units])  # resources is a list of lists, where l[0] = resource block, l[1] = units
 
     def remove_resources(self, resource, units):
-        units_left = None
+        found = False
+        p_total_units = 0
         for l in self.resources:
             if l[0] == resource:
-                if l[1] - units < 0:
-                    return 'error(release too many units: {}/{}:{})'.format(units, resource.rid, resource.units)
-                l[1] -= units
-                units_left = l[1]
+                p_total_units += l[1]
+                found = True
 
-        if units_left is None:
+        if not found:
             # print('error', resource.rid)
             return 'error(not holding resource: {})'.format(resource.rid[1])
 
-        elif units_left == 0:
+        elif p_total_units - units < 0:
+            return 'error(release too many units: {}/{}:{})'.format(units, resource.rid, l[1])
+
+        units_left = units
+        for l in self.resources:
+            if l[0] == resource:
+                if l[1] - units_left < 0:
+                    units_left = units_left - l[1]
+                    l[1] = 0
+                else:
+                    l[1] -= l[1] - units_left
+
+
+
+        if units_left == 0:
             self.resources.remove([resource, units_left])
 
         return True
@@ -112,10 +125,10 @@ class RL:
 
 
 class RCB:
-    def __init__(self, rid: int, units: int, waiting_list=Queue()):
+    def __init__(self, rid: int, units: int):
         self.rid = rid
         self.units = units
-        self.waiting_list = waiting_list  # list of tuples where t[0] = pcb, t[1] = units requested for pcb
+        self.waiting_list = Queue()  # list of tuples where t[0] = pcb, t[1] = units requested for pcb
         self.remaining_units = units
 
     def peek_wl_units(self):
@@ -139,6 +152,9 @@ class RCB:
         if tup_to_remove:
             self.waiting_list.queue.remove(tup_to_remove)
 
+    def show_waiting_list(self):
+        print(self.rid, [[t[0].pid, t[1]] for t in self.waiting_list.queue])
+
 
 class PRManager:
     def __init__(self):
@@ -152,6 +168,7 @@ class PRManager:
             self.resources.append(RCB('R{}'.format(i), i))
         self.running = self.ready_list.peek()
         self.processes = set()
+
         return self.scheduler()
 
     def create(self, pid: str, priority: int):
@@ -281,6 +298,9 @@ class PRManager:
         self.ready_list.insert(self.running)
         return self.scheduler()
 
+    def show_resources(self):
+        for r in self.resources:
+            r.show_waiting_list()
 
     def scheduler(self):
         p = self.ready_list.peek()
@@ -326,26 +346,28 @@ def main(read_file=None, out_file=None):
             if op in ['to', 'init']:
                 g.write(ops[op]() + ' ')
             elif op in ['de']:
-                out = ops[op](tokens[1])
-                # print(out)
-                g.write(out + ' ')
-                # g.write(ops[op](tokens[1]) + ' ')
+                g.write(ops[op](tokens[1]) + ' ')
             elif op in ['cr', 'req', 'rel']:
                 g.write(ops[op](tokens[1], int(tokens[2])) + ' ')
-
+                # if op == 'req':
+                #     print(tokens)
+                #     m.show_resources()
+    g.write('\n')
     g.close()
     # m.ready_list.show()
 
 
 if __name__ == '__main__':
 
-    # for i in range(1, 4):
+    # for i in range(1, 5):
     i = 4
     read_file = 'tests/input/input{}.txt'.format(i)
-    out_file = 'tests/my_out/out{}.txt'.format(i)
+    out_file = '/Volumes/{}/37145431.txt'.format('USB30FD')
     main(read_file, out_file)
 
-    for i in range(1, 4):
+    '''
+    # for debugging only
+    for i in range(1, 5):
         out_file = 'tests/my_out/out{}.txt'.format(i)
         verify_file = 'tests/output/output{}.txt'.format(i)
         out = enumerate(open(out_file))
@@ -353,12 +375,15 @@ if __name__ == '__main__':
         out_iter = iter(out)
         ver_iter = iter(ver)
         for line in range(0, len(list(enumerate(open(verify_file))))):
-            out_line = next(out_iter)
-            ver_line = next(ver_iter)
-            if out_line[1].strip() != ver_line[1].strip():
-                print(out_file, out_line, ver_line)
+            try:
+                out_line = next(out_iter)
+                ver_line = next(ver_iter)
+                if out_line[1].strip() != ver_line[1].strip():
+                    print('{} {}\n{}{}'.format(out_file, out_line, ' '*(len(out_file)+1), ver_line))
+            except StopIteration:
+                pass
 
-
+    '''
 
 
 

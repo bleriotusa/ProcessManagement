@@ -1,4 +1,4 @@
-init a init b b a c b b init
+init a init b b a b c b init
 
 init a b b b c a
 

@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad7aaeda-28f8-4780-9ceb-296eea1f2f2a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/input/input2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/output/input2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/input/input3.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/input/input4.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/output/output2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/output/output3.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/output/output4.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PRManager.py" afterPath="$PROJECT_DIR$/PRManager.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PRManagerTest.py" afterPath="$PROJECT_DIR$/PRManagerTest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/my_out/out1.txt" afterPath="$PROJECT_DIR$/tests/my_out/out1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/my_out/out2.txt" afterPath="$PROJECT_DIR$/tests/my_out/out2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/my_out/out3.txt" afterPath="$PROJECT_DIR$/tests/my_out/out3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/my_out/out4.txt" afterPath="$PROJECT_DIR$/tests/my_out/out4.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/output/output4.txt" afterPath="$PROJECT_DIR$/tests/output/output4.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ProcessResourceManage.iws" />
@@ -36,14 +33,14 @@
     <favorites_list name="ProcessResourceManage" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.48887587">
+    <splitter split-orientation="horizontal" split-proportion="0.48854962">
       <split-first>
         <leaf>
           <file leaf-file-name="out1.txt" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/my_out/out1.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="153">
+                  <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -52,8 +49,8 @@
           <file leaf-file-name="PRManagerTest.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/PRManagerTest.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="344" max-vertical-offset="1768">
-                  <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="835" max-vertical-offset="1768">
+                  <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
                   <folding>
                     <element signature="e#24#39#0" expanded="true" />
                   </folding>
@@ -74,8 +71,8 @@
           <file leaf-file-name="out2.txt" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/my_out/out2.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-                  <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="119">
+                  <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -84,8 +81,8 @@
           <file leaf-file-name="out3.txt" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/my_out/out3.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
+                  <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -94,8 +91,8 @@
           <file leaf-file-name="out4.txt" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/my_out/out4.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-                  <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="510">
+                  <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -104,13 +101,52 @@
           <file leaf-file-name="PRManager.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/PRManager.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.19777602" vertical-offset="176" max-vertical-offset="4845">
-                  <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+                <state vertical-scroll-proportion="0.9805936" vertical-offset="1759" max-vertical-offset="2822">
+                  <caret line="385" column="7" selection-start-line="385" selection-start-column="7" selection-end-line="385" selection-end-column="7" />
                   <folding>
-                    <element signature="e#23#54#0" expanded="true" />
-                    <element signature="e#1315#3208#0" expanded="false" />
-                    <element signature="e#3226#4084#0" expanded="false" />
+                    <element signature="e#109#1706#0" expanded="false" />
+                    <element signature="e#175#394#0" expanded="false" />
+                    <element signature="e#436#463#0" expanded="false" />
+                    <element signature="e#508#535#0" expanded="false" />
+                    <element signature="e#590#718#0" expanded="false" />
+                    <element signature="e#1661#1706#0" expanded="false" />
+                    <element signature="e#1723#3616#0" expanded="false" />
+                    <element signature="e#1723#1941#1" expanded="false" />
+                    <element signature="e#1975#2031#0" expanded="false" />
+                    <element signature="e#2073#2150#0" expanded="false" />
+                    <element signature="e#2186#2277#0" expanded="false" />
+                    <element signature="e#2314#2708#0" expanded="false" />
+                    <element signature="e#2738#2772#0" expanded="false" />
+                    <element signature="e#2809#3062#0" expanded="false" />
+                    <element signature="e#2809#2934#1" expanded="false" />
+                    <element signature="e#3099#3314#0" expanded="false" />
+                    <element signature="e#3345#3616#0" expanded="false" />
+                    <element signature="e#3904#3940#0" expanded="false" />
+                    <element signature="e#3979#4111#0" expanded="false" />
+                    <element signature="e#3979#4072#1" expanded="false" />
+                    <element signature="e#4250#4465#0" expanded="false" />
+                    <element signature="e#4628#4632#0" expanded="false" />
+                    <element signature="e#5019#5593#0" expanded="false" />
+                    <element signature="e#5019#5289#1" expanded="false" />
+                    <element signature="e#5631#5877#0" expanded="false" />
+                    <element signature="e#5915#6147#0" expanded="false" />
+                    <element signature="e#6185#6833#0" expanded="false" />
+                    <element signature="e#7615#8352#0" expanded="false" />
+                    <element signature="e#8398#8549#0" expanded="false" />
+                    <element signature="e#8587#8669#0" expanded="false" />
+                    <element signature="e#8703#8975#0" expanded="false" />
+                    <element signature="e#9108#9550#0" expanded="false" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="input3.txt" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tests/input/input3.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+                  <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -141,21 +177,21 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="output3.txt" pinned="false" current="false" current-in-tab="false">
+              <file leaf-file-name="output3.txt" pinned="false" current="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/tests/output/output3.txt">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
-                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                    <state vertical-scroll-proportion="0.018478261" vertical-offset="0" max-vertical-offset="920">
+                      <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="output4.txt" pinned="false" current="false" current-in-tab="true">
+              <file leaf-file-name="output4.txt" pinned="false" current="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/tests/output/output4.txt">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1280">
-                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                    <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+                      <caret line="6" column="22" selection-start-line="4" selection-start-column="0" selection-end-line="6" selection-end-column="22" />
                       <folding />
                     </state>
                   </provider>
@@ -168,8 +204,8 @@
               <file leaf-file-name="input4.txt" pinned="false" current="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/tests/input/input4.txt">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="-0.8787414" vertical-offset="1145" max-vertical-offset="2448">
-                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                    <state vertical-scroll-proportion="0.39660656" vertical-offset="85" max-vertical-offset="2448">
+                      <caret line="27" column="8" selection-start-line="22" selection-start-column="4" selection-end-line="27" selection-end-column="8" />
                       <folding />
                     </state>
                   </provider>
@@ -199,15 +235,17 @@
         <option value="$PROJECT_DIR$/tests/my_out/out1.txt" />
         <option value="$PROJECT_DIR$/PRManagerTest.py" />
         <option value="$PROJECT_DIR$/tests/my_out/out2.txt" />
-        <option value="$PROJECT_DIR$/PRManager.py" />
         <option value="$PROJECT_DIR$/tests/my_out/out4.txt" />
+        <option value="$PROJECT_DIR$/tests/output/output4.txt" />
+        <option value="$PROJECT_DIR$/tests/input/input4.txt" />
+        <option value="$PROJECT_DIR$/PRManager.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="2559" />
-    <option name="height" value="1413" />
+    <option name="width" value="2556" />
+    <option name="height" value="1397" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -320,6 +358,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="LayoutCode.rearrangeEntriesPlain text" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -605,19 +644,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2559" height="1413" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="2556" height="1397" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296131" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296131" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.11567018" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2596726" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11541471" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25903615" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33255178" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25903615" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3348983" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -645,7 +684,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="30" />
+      <option name="time" value="31" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -654,9 +693,38 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1626" max-vertical-offset="2890">
           <caret line="101" column="18" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
           <folding>
-            <element signature="e#23#54#0" expanded="true" />
-            <element signature="e#1315#3208#0" expanded="false" />
-            <element signature="e#3226#4084#0" expanded="false" />
+            <element signature="e#109#1706#0" expanded="false" />
+            <element signature="e#175#394#0" expanded="false" />
+            <element signature="e#436#463#0" expanded="false" />
+            <element signature="e#508#535#0" expanded="false" />
+            <element signature="e#590#718#0" expanded="false" />
+            <element signature="e#1661#1706#0" expanded="false" />
+            <element signature="e#1723#3616#0" expanded="false" />
+            <element signature="e#1723#1941#1" expanded="false" />
+            <element signature="e#1975#2031#0" expanded="false" />
+            <element signature="e#2073#2150#0" expanded="false" />
+            <element signature="e#2186#2277#0" expanded="false" />
+            <element signature="e#2314#2708#0" expanded="false" />
+            <element signature="e#2738#2772#0" expanded="false" />
+            <element signature="e#2809#3062#0" expanded="false" />
+            <element signature="e#2809#2934#1" expanded="false" />
+            <element signature="e#3099#3314#0" expanded="false" />
+            <element signature="e#3345#3616#0" expanded="false" />
+            <element signature="e#3904#3940#0" expanded="false" />
+            <element signature="e#3979#4111#0" expanded="false" />
+            <element signature="e#3979#4072#1" expanded="false" />
+            <element signature="e#4250#4465#0" expanded="false" />
+            <element signature="e#4628#4632#0" expanded="false" />
+            <element signature="e#5019#5593#0" expanded="false" />
+            <element signature="e#5019#5289#1" expanded="false" />
+            <element signature="e#5631#5877#0" expanded="false" />
+            <element signature="e#5915#6147#0" expanded="false" />
+            <element signature="e#6185#6833#0" expanded="false" />
+            <element signature="e#7615#8352#0" expanded="false" />
+            <element signature="e#8398#8549#0" expanded="false" />
+            <element signature="e#8587#8669#0" expanded="false" />
+            <element signature="e#8703#8975#0" expanded="false" />
+            <element signature="e#9108#9550#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -719,42 +787,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/input/input3.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/input/input4.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8787414" vertical-offset="1145" max-vertical-offset="2448">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/my_out/out3.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="873">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/output/output1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136">
           <caret line="1" column="37" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/output/output3.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -767,26 +803,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/output/output4.txt">
+    <entry file="file://$PROJECT_DIR$/tests/my_out/out2.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="119">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/my_out/out2.txt">
+    <entry file="file://$PROJECT_DIR$/tests/my_out/out4.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="510">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/input/input4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39660656" vertical-offset="85" max-vertical-offset="2448">
+          <caret line="27" column="8" selection-start-line="22" selection-start-column="4" selection-end-line="27" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/my_out/out1.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="153">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/output/output4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="6" column="22" selection-start-line="4" selection-start-column="0" selection-end-line="6" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -799,32 +851,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/my_out/out4.txt">
+    <entry file="file://$PROJECT_DIR$/tests/my_out/out3.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/input/input3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PRManagerTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="344" max-vertical-offset="1768">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="835" max-vertical-offset="1768">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding>
             <element signature="e#24#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/output/output3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.018478261" vertical-offset="0" max-vertical-offset="920">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PRManager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19777602" vertical-offset="176" max-vertical-offset="4845">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.9805936" vertical-offset="1759" max-vertical-offset="2822">
+          <caret line="385" column="7" selection-start-line="385" selection-start-column="7" selection-end-line="385" selection-end-column="7" />
           <folding>
-            <element signature="e#23#54#0" expanded="true" />
-            <element signature="e#1315#3208#0" expanded="false" />
-            <element signature="e#3226#4084#0" expanded="false" />
+            <element signature="e#109#1706#0" expanded="false" />
+            <element signature="e#175#394#0" expanded="false" />
+            <element signature="e#436#463#0" expanded="false" />
+            <element signature="e#508#535#0" expanded="false" />
+            <element signature="e#590#718#0" expanded="false" />
+            <element signature="e#1661#1706#0" expanded="false" />
+            <element signature="e#1723#3616#0" expanded="false" />
+            <element signature="e#1723#1941#1" expanded="false" />
+            <element signature="e#1975#2031#0" expanded="false" />
+            <element signature="e#2073#2150#0" expanded="false" />
+            <element signature="e#2186#2277#0" expanded="false" />
+            <element signature="e#2314#2708#0" expanded="false" />
+            <element signature="e#2738#2772#0" expanded="false" />
+            <element signature="e#2809#3062#0" expanded="false" />
+            <element signature="e#2809#2934#1" expanded="false" />
+            <element signature="e#3099#3314#0" expanded="false" />
+            <element signature="e#3345#3616#0" expanded="false" />
+            <element signature="e#3904#3940#0" expanded="false" />
+            <element signature="e#3979#4111#0" expanded="false" />
+            <element signature="e#3979#4072#1" expanded="false" />
+            <element signature="e#4250#4465#0" expanded="false" />
+            <element signature="e#4628#4632#0" expanded="false" />
+            <element signature="e#5019#5593#0" expanded="false" />
+            <element signature="e#5019#5289#1" expanded="false" />
+            <element signature="e#5631#5877#0" expanded="false" />
+            <element signature="e#5915#6147#0" expanded="false" />
+            <element signature="e#6185#6833#0" expanded="false" />
+            <element signature="e#7615#8352#0" expanded="false" />
+            <element signature="e#8398#8549#0" expanded="false" />
+            <element signature="e#8587#8669#0" expanded="false" />
+            <element signature="e#8703#8975#0" expanded="false" />
+            <element signature="e#9108#9550#0" expanded="false" />
           </folding>
         </state>
       </provider>
